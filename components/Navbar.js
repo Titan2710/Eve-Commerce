@@ -8,24 +8,24 @@ function Navbar() {
 
   return (
     <div>
-        <nav className='shadow-sm fixed w-full z-10'>
+        <nav className='fixed z-10 w-full shadow-sm'>
             <div className='w-full'>
-                <div className='flex items-center h-20 w-full'>
-                    <div className='flex items items-center mx-20 justify-between w-full'>
-                        <div className='flex justify-center items-center flex-shrink-0'>
-                            <h1 className='font-bold text-xl cursor-pointer'>
-                                Stream<span className='text-blue-500'>line</span>
+                <div className='flex items-center w-full h-20'>
+                    <div className='flex items-center justify-between w-full mx-20 items'>
+                        <div className='flex items-center justify-center flex-shrink-0'>
+                            <h1 className='text-xl font-bold cursor-pointer'>
+                                <span className='text-blue-500'>EvE</span>
                             </h1>
                         </div>
                         <div className='hidden md:block'>
-                            <div className='ml-10 flex items-baseline space-x-4'>
+                            <div className='flex items-baseline ml-10 space-x-4'>
                                 <Link 
                                     activeClass='Home'
                                     to="home"
                                     smooth={true}
                                     offset={50}
                                     duration={500}
-                                    className='cursor-pointer text-blue-600 font-semibold px-3 py-2 text-md hover:font-black'
+                                    className='px-3 py-2 font-semibold text-blue-600 cursor-pointer text-md hover:font-black'
                                 >
                                     Home
                                 </Link>
@@ -35,7 +35,7 @@ function Navbar() {
                                     smooth={true}
                                     offset={50}
                                     duration={500}
-                                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                    className='px-3 py-2 text-sm font-medium text-black rounded-md cursor-pointer hover:bg-blue-600 hover:text-white'
                                 >
                                     About
                                 </Link>
@@ -45,7 +45,7 @@ function Navbar() {
                                     smooth={true}
                                     offset={50}
                                     duration={500}
-                                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                    className='px-3 py-2 text-sm font-medium text-black rounded-md cursor-pointer hover:bg-blue-600 hover:text-white'
                                 >
                                     Projects
                                 </Link>
@@ -55,7 +55,7 @@ function Navbar() {
                                     smooth={true}
                                     offset={50}
                                     duration={500}
-                                    className='cursor-pointer hover:bg-blue-600 text-black hover:text-white px-3 py-2 rounded-md text-sm font-medium'
+                                    className='px-3 py-2 text-sm font-medium text-black rounded-md cursor-pointer hover:bg-blue-600 hover:text-white'
                                 >
                                     Services
                                 </Link>
@@ -65,28 +65,25 @@ function Navbar() {
                                     smooth={true}
                                     offset={50}
                                     duration={500}
-                                    className='cursor-pointer bg-blue-600 text-white px-3 py-2 hover:bg-black rounded-md text-sm font-medium'
+                                    className='px-3 py-2 text-sm font-medium text-white bg-blue-600 rounded-md cursor-pointer hover:bg-black'
                                 >
                                     Contact
                                 </Link>
                             </div>
                         </div>
                     </div>
-                    <div className='mr-10 flex md:hidden'>
+                    <div className='flex mr-10 md:hidden'>
                         <button 
                             onClick={() =>setIsOpen(!isOpen)} 
                             type="button" 
-                            className='bg-blue-600 inline-flex items-center p-2 
-                                        rounded-md text-white
-                                        hover:bg-blue-600 focus: outline-none 
-                                        focus:ring-offset-blue-800 focus:ring-white'
+                            className='inline-flex items-center p-2 text-white bg-blue-600 rounded-md outline-none hover:bg-blue-600 focus: focus:ring-offset-blue-800 focus:ring-white'
                             aria-controls='mobile-menu'
                             aria-expanded="false"
                          >
                             <span className="sr-only">Only main menu</span>
                             {!isOpen ? (
                                 <svg 
-                                    className='block h-6 w-6' 
+                                    className='block w-6 h-6' 
                                     xmlns="http:www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -102,7 +99,7 @@ function Navbar() {
                                 </svg>
                             ): (
                                 <svg 
-                                    className='block h-6 w-6 ' 
+                                    className='block w-6 h-6 ' 
                                     xmlns="http:www.w3.org/2000/svg"
                                     fill="none"
                                     viewBox="0 0 24 24"
@@ -132,7 +129,7 @@ function Navbar() {
              >
                 {(ref) => (
                     <div className='md:hidden id=mobile-menu'>
-                        <div ref={ref} className="bg-white px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                        <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 bg-white sm:px-3">
                             <Link
                                 href="/home"
                                 activeClass='home'
@@ -140,7 +137,7 @@ function Navbar() {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
-                                className="cursor-pointer hover:bg-blue-600 mx-10 hover:mx-8 transition-all text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 mx-10 text-base font-medium text-black transition-all rounded-md cursor-pointer hover:bg-blue-600 hover:mx-8 hover:text-white"
                             >
                                 Home
                             </Link>
@@ -151,7 +148,7 @@ function Navbar() {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
-                                className="cursor-pointer hover:bg-blue-600 mx-10 hover:mx-8 transition-all text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 mx-10 text-base font-medium text-black transition-all rounded-md cursor-pointer hover:bg-blue-600 hover:mx-8 hover:text-white"
                             >
                                 About
                             </Link>
@@ -162,7 +159,7 @@ function Navbar() {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
-                                className="cursor-pointer hover:bg-blue-600 mx-10 hover:mx-8 transition-all text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 mx-10 text-base font-medium text-black transition-all rounded-md cursor-pointer hover:bg-blue-600 hover:mx-8 hover:text-white"
                             >
                                 Projects
                             </Link>
@@ -173,7 +170,7 @@ function Navbar() {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
-                                className="cursor-pointer hover:bg-blue-600 mx-10 hover:mx-8 transition-all text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 mx-10 text-base font-medium text-black transition-all rounded-md cursor-pointer hover:bg-blue-600 hover:mx-8 hover:text-white"
                             >
                                 Services
                             </Link>
@@ -184,7 +181,7 @@ function Navbar() {
                                 smooth={true}
                                 offset={50}
                                 duration={500}
-                                className="cursor-pointer hover:bg-blue-600 mx-10 hover:mx-8 transition-all text-black hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                                className="block px-3 py-2 mx-10 text-base font-medium text-black transition-all rounded-md cursor-pointer hover:bg-blue-600 hover:mx-8 hover:text-white"
                             >
                                 Contact
                             </Link>
